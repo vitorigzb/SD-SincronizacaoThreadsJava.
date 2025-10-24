@@ -1,0 +1,10 @@
+
+Análise técnica
+
+Mesmo rodando o mesmo programa duas vezes, as saídas foram um pouco diferentes, em alguns momentos, o consumidor leu valores repetidos e aordem de execução entre os dois mudaram entre um log e outro.
+Isso aconteceu porque não há sincronização no código, as duas threads acessam e mudam a váriavel ao mesmo tempo, sem nenhuma forma de controle, o produtor tenta armazenar um novo valor em Dado, e o Consumidor tenta ler o mesmo valor várias vezes ao mesmo tempo.
+Esse tipo de comportamento mostra claramente a condição de corrida ou a famosa race condition, no caso aqui é quando  o resultado depende da ordem de execução das threads, algo que não conseguimos prever.
+
+O programa funciona, mas é instável e inconsistente.  
+Cada execução gera um resultado diferente, o que comprova que sem sincronização, não há garantia de integridade dos dados.  
+
