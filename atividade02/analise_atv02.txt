@@ -1,0 +1,6 @@
+Análise técnica da execução
+
+Usando a sincronização com monitores, múltiplas threads são impedidas de serem criadas ao mesmo tempo, o que garante que cada thread termine suas tarefas uma de cada vez.
+Sem a sincronização, ocorre dados quebrados, os resultados variam.
+
+Ou seja usando a sincronização, protegemos dados , temos uma execução estável e consistente, enquanto sem a sincronização, recebemos a possibilidade de dados corrompidos, como o consumo de dados repetidos ou errados.
