@@ -52,6 +52,20 @@ Produtor usando Monitor: 1
 ### 💻 Análise técnica da execução
 Sem sincronização de dados, temos desordem e muitos erros, com a sincronização com monitores, múltiplas threads são impedidas de serem criadas ao mesmo tempo, garante exclusão mútua, porém não há uma coordenação direta, e agora com a sincronização com eventos, conseguimos o equilibrio ideal, produtor e consumidor trabalham em harmonia, alternando corretamente o que garante resultados consistentes.
 
+**Exemplo de saída:** 
+
+Produtor usando Eventos: 0
+Consumidor usando Eventos: 0
+Produtor usando Eventos: 1
+Consumidor usando Eventos: 1
+Consumidor usando Eventos: 2
+Produtor usando Eventos: 2
+Produtor usando Eventos: 3
+Consumidor usando Eventos: 3
+Produtor usando Eventos: 4
+Consumidor usando Eventos: 4
+
+
   Ou seja, a sincronização com eventos é a **abordagem mais eficiente e refinada**:
 - Garante a integridade dos dados  
 - Elimina as condições de corrida  
@@ -60,9 +74,9 @@ Sem sincronização de dados, temos desordem e muitos erros, com a sincronizaç�
 
 ## 💬 Opinião Pessoal  
 
-Durante a análise, ficou claro que a **sincronização é essencial** para o funcionamento correto de sistemas com múltiplas threads.  
-A ausência dela causa resultados imprevisíveis e inconsistentes.  
-A sincronização com monitores traz segurança, mas é a **sincronização com eventos** que realmente mostra a força da comunicação entre threads, permitindo que produtor e consumidor cooperem de forma eficiente.
+Comparando todas as execuções, ficou claro que a **sincronização é essencial** para o funcionamento correto de sistemas com múltiplas threads.  
+A falta de uma sincronização gera resultados imprevisíveis e inconsistentes.  
+A sincronização com monitores traz segurança, mas é a **sincronização com eventos** que realmente mostra a força da comunicação entre threads, o que permite que produtor e consumidor trabalhem de forma eficiente.
 
 ---
 
