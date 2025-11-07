@@ -1,12 +1,12 @@
-# 🧩 Análise de Sincronização em Threads Java
+# 📚 Análise de Sincronização em Threads Java
 
 Este relatório apresenta uma análise técnica e comparativa das três atividades práticas do projeto **SD-SincronizacaoThreadsJava**, abordando diferentes formas de sincronização entre threads em Java.
 
 ---
 
-## ⚙️ Atividade Prática 01 — Sem Sincronização
+## 🔹 Atividade Prática 01 — Sem Sincronização
 
-### 💻 Análise técnica da execução
+### ☝️ Análise técnica da execução
 Mesmo rodando o mesmo programa duas vezes, as saídas foram um pouco diferentes, em alguns momentos, o consumidor leu valores repetidos e aordem de execução entre os dois mudaram entre um log e outro.
 Isso aconteceu porque não há sincronização no código, as duas threads acessam e mudam a váriavel ao mesmo tempo, sem nenhuma forma de controle, o produtor tenta armazenar um novo valor em Dado, e o Consumidor tenta ler o mesmo valor várias vezes ao mesmo tempo.
 Esse tipo de comportamento mostra claramente a condição de corrida ou a famosa race condition, no caso aqui é quando  o resultado depende da ordem de execução das threads, algo que não conseguimos prever.
@@ -27,9 +27,9 @@ Produtor: 3
 Consumidor: 3
 Consumidor: 3 
 
-## 🧱 Atividade Prática 02 — Sincronização com Monitores
+## 🔹 Atividade Prática 02 — Sincronização com Monitores
 
-### 💻 Análise técnica da execução
+### ☝️ Análise técnica da execução
 Usando a sincronização com monitores, múltiplas threads são impedidas de serem criadas ao mesmo tempo, o que garante que cada thread termine suas tarefas uma de cada vez.
 Sem a sincronização, ocorre dados quebrados, os resultados variam.
 
@@ -47,9 +47,9 @@ Armazenar Iniciando...
 Armazenar Finalizando...
 Produtor usando Monitor: 1
 
-## 🔔 Atividade Prática 03 — Sincronização com Eventos (`wait()` / `notify()`)
+## 🔹 Atividade Prática 03 — Sincronização com Eventos (`wait()` / `notify()`)
 
-### 💻 Análise técnica da execução
+###☝️ Análise técnica da execução
 Sem sincronização de dados, temos desordem e muitos erros, com a sincronização com monitores, múltiplas threads são impedidas de serem criadas ao mesmo tempo, garante exclusão mútua, porém não há uma coordenação direta, e agora com a sincronização com eventos, conseguimos o equilibrio ideal, produtor e consumidor trabalham em harmonia, alternando corretamente o que garante resultados consistentes.
 
 **Exemplo de saída:** 
@@ -72,7 +72,7 @@ Consumidor usando Eventos: 4
 - Estabelece comunicação direta entre as threads  
 - Melhora o desempenho geral
 
-## 💬 Opinião Pessoal  
+## 💣 Opinião Pessoal  
 
 Comparando todas as execuções, ficou claro que a **sincronização é essencial** para o funcionamento correto de sistemas com múltiplas threads.  
 A falta de uma sincronização gera resultados imprevisíveis e inconsistentes.  
@@ -80,6 +80,6 @@ A sincronização com monitores traz segurança, mas é a **sincronização com 
 
 ---
 
-✍️ **Autor:** *[Vitoria Gabriely Lacerda]*  
+🧜‍♀️ **Autor:** *[Vitoria Gabriely Lacerda]*  
 📅 **Data:** *[12 de nov]*  
-📘 **Disciplina:** Sistemas Distribuídos — *Sincronização de Threads em Java*
+👮‍♀️❤️ **Disciplina:** Sistemas Distribuídos — *Sincronização de Threads em Java*
