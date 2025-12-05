@@ -1,0 +1,6 @@
+Análise Comparativa
+
+Carro.java utiliza Semaforo com 10 permissões, controlando até 10 carros ao mesmo tempo.
+CarroLock.java utiliza ReentrantLock, mas precisa ser static para funcionar corretamente como recurso compartilhado.
+Semáforo permite várias threads simultâneas; Lock garante exclusão mútua.
+CarroLock.java é mais previsível e seguro quando está static.
